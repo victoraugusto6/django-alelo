@@ -19,4 +19,7 @@ install:
 
 script:
   - pipenv run flake8 .
-  - pipenv run pytest
+  - pipenv run pytest --cov=alelo
+
+after_success:
+  - pipenv run codecov
