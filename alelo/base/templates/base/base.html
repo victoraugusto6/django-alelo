@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Alelo{% endblock title %}</title>
+
+    <meta name="description" content={% block description %}"Página base do Cartão Alelo"{% endblock description %}>
+    <meta name="author" content="Victor">
+
+    <link href="/static/base/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/base/css/style.css" rel="stylesheet">
+
+    <script src="/static/base/js/jquery.min.js"></script>
+    <script src="/static/base/js/bootstrap.min.js"></script>
+    <script src="/static/base/js/scripts.js"></script>
+
+</head>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">Alelo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Mês
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Janeiro</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{% block body %}{% endblock body %}
+
+</html>

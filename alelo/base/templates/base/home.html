@@ -1,65 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+{% extends 'base/base.html' %}
+{% block title %}Python Pro - Home{% endblock title %}
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
 
-    <title>Home - Alelo</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
-    <link href="/static/base/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/base/css/style.css" rel="stylesheet">
-
-    <script src="/static/base/js/jquery.min.js"></script>
-    <script src="/static/base/js/bootstrap.min.js"></script>
-    <script src="/static/base/js/scripts.js"></script>
-
-</head>
-<body>
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Alelo</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                   aria-haspopup="true" aria-expanded="false">
-                    Mês
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Janeiro</a>
+                <div class="jumbotron">
+                    <h2>
+                        Olá, usuário!
+                    </h2>
+                    <p>
+                        Bem-Vindo ao sistema de cadastro do cartão Alelo. Para cadastrar algum valor selecione o Mês
+                        desejado no drop-menu acima.
+                    </p>
                 </div>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12">
-
-            <div class="jumbotron">
-                <h2>
-                    Olá, usuário!
-                </h2>
-                <p>
-                    Bem-Vindo ao sistema de cadastro do cartão Alelo. Para cadastrar algum valor selecione o Mês
-                    desejado no drop-menu acima.
-                </p>
             </div>
-
         </div>
     </div>
-</div>
-
-
-</body>
-</html>
+{% endblock body %}
