@@ -16,10 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from alelo.base.views import home, meses
+from alelo.base.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
-    path('meses/', meses),
 ]
