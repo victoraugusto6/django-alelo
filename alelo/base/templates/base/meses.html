@@ -1,5 +1,6 @@
 {% extends 'base/base.html' %}
-{% block title %}Home - Meses{% endblock title %}
+{% load static %}
+{% block title %}Alelo - Meses{% endblock title %}
 {% block body %}
 
     <div class="container-fluid">
@@ -17,13 +18,16 @@
 
                 </div>
 
-                <form action="{% url 'base:home' %} " method="post">
+                <form action="{% url 'base:meses' %}" method="post">
+                    {% csrf_token %}
                     <div class="form-group">
                         <label for="formGroupExampleInput">Adicionar valor</label>
-                        <input type="number" step="0.01" min="0.01" class="form-control" id="formGroupExampleInput"
-                               placeholder="R$">
+                        <input type="number" name="valor" step="0.01" min="0.01" class="form-control"
+                               id="formGroupExampleInput"
+                               placeholder="R$" required>
+                        <small class="form-text text-muted">{{ form.valor.errors }}</small>
                         <br>
-                        <button type="button" class="btn btn-outline-primary">Adicionar</button>
+                        <button type="submit" class="btn btn-outline-primary">Adicionar</button>
 
                     </div>
                 </form>
@@ -40,20 +44,35 @@
                         <th>
                             Data
                         </th>
+                        <th>
+                            Excluir
+                        </th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td>
-                            1
-                        </td>
-                        <td>
-                            TB - Monthly
-                        </td>
-                        <td>
-                            01/04/2012
-                        </td>
-                    </tr>
+
+                    {% for valor in valores_mes %}
+                        <tr>
+                            <td>
+                                {{ valor.pk }}
+                            </td>
+                            <td>
+                                R$ {{ valor.valor }}
+                            </td>
+                            <td>
+                                {{ valor.criado_em }}
+                            </td>
+                            <td>
+
+                                <form action="{% url 'base:apagar' valor_id=valor.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+
                     </tbody>
                 </table>
             </div>
