@@ -9,16 +9,16 @@
 
                 <div class="jumbotron">
                     <h2>
-                        Olá, usuário!
+                        Olá, {{ user.first_name }}!
                     </h2>
                     <p>
-                        Para cadastrar algum valor para o mês de <b>Janeiro</b> basta digitar o mesmo
+                        Para cadastrar algum valor para o mês de <b>Março</b> basta digitar o mesmo
                         no campo de texto abaixo e clicar no botão 'Adicionar'.
                     </p>
 
                 </div>
 
-                <form action="{% url 'base:meses' %}" method="post">
+                <form action="{% url 'base:marco' %}" method="post">
                     {% csrf_token %}
                     <div class="form-group">
                         <label for="formGroupExampleInput">Adicionar valor</label>
@@ -64,7 +64,7 @@
                             </td>
                             <td>
 
-                                <form action="{% url 'base:apagar' valor_id=valor.id %}" method="post">
+                                <form action="{% url 'base:apagar_valor_marco' valor.id %}" method="post">
                                     {% csrf_token %}
                                     <button type="submit" class="btn btn-danger">Excluir</button>
                                 </form>
@@ -75,6 +75,19 @@
 
                     </tbody>
                 </table>
+
+                <div class="jumbotron">
+                    <p class="lead">Total</p>
+                    <hr class="my-4">
+
+                    {% if total_mes_marco == None %}
+                        <h2>Vazio</h2>
+                    {% else %}
+                        <h2>R$ {{ total_mes_marco }}</h2>
+                    {% endif %}
+
+                </div>
+
             </div>
         </div>
     </div>

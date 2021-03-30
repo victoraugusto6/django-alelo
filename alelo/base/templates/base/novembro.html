@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block title %}Alelo - Meses{% endblock title %}
+{% block body %}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+
+                <div class="jumbotron">
+                    <h2>
+                        Olá, {{ user.first_name }}!
+                    </h2>
+                    <p>
+                        Para cadastrar algum valor para o mês de <b>Novembro</b> basta digitar o mesmo
+                        no campo de texto abaixo e clicar no botão 'Adicionar'.
+                    </p>
+
+                </div>
+
+                <form action="{% url 'base:novembro' %}" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Adicionar valor</label>
+                        <input type="number" name="valor" step="0.01" min="0.01" class="form-control"
+                               id="formGroupExampleInput"
+                               placeholder="R$" required>
+                        <small class="form-text text-muted">{{ form.valor.errors }}</small>
+                        <br>
+                        <button type="submit" class="btn btn-outline-primary">Adicionar</button>
+
+                    </div>
+                </form>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Valor
+                        </th>
+                        <th>
+                            Data
+                        </th>
+                        <th>
+                            Excluir
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for valor in valores_mes %}
+                        <tr>
+                            <td>
+                                {{ valor.pk }}
+                            </td>
+                            <td>
+                                R$ {{ valor.valor }}
+                            </td>
+                            <td>
+                                {{ valor.criado_em }}
+                            </td>
+                            <td>
+
+                                <form action="{% url 'base:apagar_valor_novembro' valor.id %}" method="post">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-danger">Excluir</button>
+                                </form>
+
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+                <div class="jumbotron">
+                    <p class="lead">Total</p>
+                    <hr class="my-4">
+
+                    {% if total_mes_novembro == None %}
+                        <h2>Vazio</h2>
+                    {% else %}
+                        <h2>R$ {{ total_mes_novembro }}</h2>
+                    {% endif %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock body %}

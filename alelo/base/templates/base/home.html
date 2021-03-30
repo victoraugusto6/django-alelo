@@ -8,11 +8,19 @@
 
                 <div class="jumbotron">
                     <h2>
-                        Olá, usuário!
+                        {% if user.is_authenticated %}
+                            Olá, {{ user.first_name }}!
+                        {% else %}
+                            Olá!
+                        {% endif %}
                     </h2>
                     <p>
-                        Bem-Vindo ao sistema de cadastro do cartão Alelo. Para cadastrar algum valor selecione o Mês
-                        desejado no drop-menu acima.
+                        {% if user.is_authenticated %}
+                            Bem-Vindo ao sistema de cadastro de valores gastos no cartão Alelo. Para cadastrar algum valor selecione o Mês
+                            desejado no drop-menu acima.
+                        {% else %}
+                            Bem-Vindo ao sistema de cadastro de valores gastos no cartão Alelo. Para começar realize o login.
+                        {% endif %}
                     </p>
                 </div>
 
