@@ -83,7 +83,7 @@
                     {% if total_mes_fevereiro == None %}
                         <h2>Vazio</h2>
                     {% else %}
-                        <h2>R$ {{ total_mes_fevereiro }}</h2>
+                        <h2>R$ {{ total_mes_fevereiro|floatformat:2 }}</h2>
                     {% endif %}
 
                 </div>

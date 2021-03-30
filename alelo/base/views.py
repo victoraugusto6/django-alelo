@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.db.models import Sum
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
@@ -15,6 +16,7 @@ def home(request):
 
 
 # Mês - Janeiro
+@login_required
 def janeiro(request):
     if request.method == 'POST':
         form = JaneiroValorNovoForm(request.POST)
@@ -41,6 +43,7 @@ def apagar_valor_janeiro(request, pk):
 
 
 # Mês - Fevereiro
+@login_required
 def fevereiro(request):
     if request.method == 'POST':
         form = FevereiroValorNovoForm(request.POST)
@@ -68,6 +71,7 @@ def apagar_valor_fevereiro(request, pk):
 
 
 # Mês - Março
+@login_required
 def marco(request):
     if request.method == 'POST':
         form = MarcoValorNovoForm(request.POST)
@@ -94,6 +98,7 @@ def apagar_valor_marco(request, pk):
 
 
 # Mês - Abril
+@login_required
 def abril(request):
     if request.method == 'POST':
         form = AbrilValorNovoForm(request.POST)
@@ -120,6 +125,7 @@ def apagar_valor_abril(request, pk):
 
 
 # Mês - Maio
+@login_required
 def maio(request):
     if request.method == 'POST':
         form = MaioValorNovoForm(request.POST)
@@ -146,6 +152,7 @@ def apagar_valor_maio(request, pk):
 
 
 # Mês - Junho
+@login_required
 def junho(request):
     if request.method == 'POST':
         form = JunhoValorNovoForm(request.POST)
@@ -172,6 +179,7 @@ def apagar_valor_junho(request, pk):
 
 
 # Mês - Julho
+@login_required
 def julho(request):
     if request.method == 'POST':
         form = JulhoValorNovoForm(request.POST)
@@ -198,6 +206,7 @@ def apagar_valor_julho(request, pk):
 
 
 # Mês - Agosto
+@login_required
 def agosto(request):
     if request.method == 'POST':
         form = AgostoValorNovoForm(request.POST)
@@ -224,6 +233,7 @@ def apagar_valor_agosto(request, pk):
 
 
 # Mês - Setembro
+@login_required
 def setembro(request):
     if request.method == 'POST':
         form = SetembroValorNovoForm(request.POST)
@@ -250,6 +260,7 @@ def apagar_valor_setembro(request, pk):
 
 
 # Mês - Outubro
+@login_required
 def outubro(request):
     if request.method == 'POST':
         form = OutubroValorNovoForm(request.POST)
@@ -276,6 +287,7 @@ def apagar_valor_outubro(request, pk):
 
 
 # Mês - Novembro
+@login_required
 def novembro(request):
     if request.method == 'POST':
         form = NovembroValorNovoForm(request.POST)
@@ -302,6 +314,7 @@ def apagar_valor_novembro(request, pk):
 
 
 # Mês - Dezembro
+@login_required
 def dezembro(request):
     if request.method == 'POST':
         form = DezembroValorNovoForm(request.POST)
