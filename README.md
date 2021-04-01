@@ -1,7 +1,7 @@
 # Django - Alelo
 
-[![Updates](https://pyup.io/repos/github/victoraugusto6/curso-django/shield.svg)](https://pyup.io/repos/github/victoraugusto6/curso-django/)
-[![Python 3](https://pyup.io/repos/github/victoraugusto6/curso-django/python-3-shield.svg)](https://pyup.io/repos/github/victoraugusto6/curso-django/)
+[![Updates](https://pyup.io/repos/github/victoraugusto6/django-alelo/shield.svg)](https://pyup.io/repos/github/victoraugusto6/django-alelo/)
+[![Python 3](https://pyup.io/repos/github/victoraugusto6/django-alelo/python-3-shield.svg)](https://pyup.io/repos/github/victoraugusto6/django-alelo/)
 
 #### Projeto realizado com Python + Django para listar compras realizadas no cartão Alelo.
 
