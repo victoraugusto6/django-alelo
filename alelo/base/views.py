@@ -30,7 +30,8 @@ def janeiro(request):
     total_mes_janeiro_dct = Janeiro.objects.aggregate(Sum('valor'))
     total_mes_janeiro = total_mes_janeiro_dct['valor__sum']
     valores_mes = Janeiro.objects.all()
-    return render(request, 'base/meses/janeiro.html', {'valores_mes': valores_mes, 'total_mes_janeiro': total_mes_janeiro})
+    return render(request, 'base/meses/janeiro.html',
+                  {'valores_mes': valores_mes, 'total_mes_janeiro': total_mes_janeiro})
 
 
 def apagar_valor_janeiro(request, pk):
@@ -247,7 +248,8 @@ def setembro(request):
     total_mes_setembro_dct = Setembro.objects.aggregate(Sum('valor'))
     total_mes_setembro = total_mes_setembro_dct['valor__sum']
     valores_mes = Setembro.objects.all()
-    return render(request, 'base/meses/setembro.html', {'valores_mes': valores_mes, 'total_mes_setembro': total_mes_setembro})
+    return render(request, 'base/meses/setembro.html',
+                  {'valores_mes': valores_mes, 'total_mes_setembro': total_mes_setembro})
 
 
 def apagar_valor_setembro(request, pk):
@@ -274,7 +276,8 @@ def outubro(request):
     total_mes_outubro_dct = Outubro.objects.aggregate(Sum('valor'))
     total_mes_outubro = total_mes_outubro_dct['valor__sum']
     valores_mes = Outubro.objects.all()
-    return render(request, 'base/meses/outubro.html', {'valores_mes': valores_mes, 'total_mes_outubro': total_mes_outubro})
+    return render(request, 'base/meses/outubro.html',
+                  {'valores_mes': valores_mes, 'total_mes_outubro': total_mes_outubro})
 
 
 def apagar_valor_outubro(request, pk):
@@ -301,7 +304,8 @@ def novembro(request):
     total_mes_novembro_dct = Novembro.objects.aggregate(Sum('valor'))
     total_mes_novembro = total_mes_novembro_dct['valor__sum']
     valores_mes = Novembro.objects.all()
-    return render(request, 'base/meses/novembro.html', {'valores_mes': valores_mes, 'total_mes_novembro': total_mes_novembro})
+    return render(request, 'base/meses/novembro.html',
+                  {'valores_mes': valores_mes, 'total_mes_novembro': total_mes_novembro})
 
 
 def apagar_valor_novembro(request, pk):
@@ -328,7 +332,8 @@ def dezembro(request):
     total_mes_dezembro_dct = Dezembro.objects.aggregate(Sum('valor'))
     total_mes_dezembro = total_mes_dezembro_dct['valor__sum']
     valores_mes = Dezembro.objects.all()
-    return render(request, 'base/meses/dezembro.html', {'valores_mes': valores_mes, 'total_mes_dezembro': total_mes_dezembro})
+    return render(request, 'base/meses/dezembro.html',
+                  {'valores_mes': valores_mes, 'total_mes_dezembro': total_mes_dezembro})
 
 
 def apagar_valor_dezembro(request, pk):
