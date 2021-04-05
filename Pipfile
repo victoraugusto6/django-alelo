@@ -18,6 +18,7 @@ django-extensions = "*"
 flake8 = "*"
 pytest-django = "*"
 coverage = "*"
+model-mommy = "*"
 
 [requires]
 python_version = "3.9"
