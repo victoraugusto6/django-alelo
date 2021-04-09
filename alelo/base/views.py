@@ -12,9 +12,7 @@ from alelo.base.models import Janeiro, Fevereiro, Marco, Abril, Maio, Junho, Jul
 
 
 def home(request):
-    from django.http import HttpResponse
-    return HttpResponse('<html><body>Olá</body></html>', content_type='text/html')
-    # return render(request, 'base/home.html')
+    return render(request, 'base/home.html')
 
 
 # Mês - Janeiro
